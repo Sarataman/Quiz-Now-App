@@ -3,16 +3,6 @@ const question = document.getElementById("quiz");
 (function() {
     const myQuestions = [
       {
-        question: "What year was Andela found?",
-        answers: {
-          a: "1999",
-          b: "2014",
-          c: "2017",
-          d: "2011"
-        },
-        correctAnswer: "b"
-      },
-      {
         question: "What is the world's most expensive spice by weight?",
         answers: {
           a: "Saffro",
@@ -39,6 +29,16 @@ const question = document.getElementById("quiz");
           b: "Hungarian",
           c: "Greek",
           d: "Latvian",
+        },
+        correctAnswer: "b"
+      },
+      {
+        question: "What year was Andela found?",
+        answers: {
+          a: "1999",
+          b: "2014",
+          c: "2017",
+          d: "2011"
         },
         correctAnswer: "b"
       },
@@ -93,115 +93,15 @@ const question = document.getElementById("quiz");
         correctAnswer: "a"
       },
       {
-        question: "Which sign of the zodiac is represented by the Crab?",
-        answers: {
-          a: "Libra",
-          b: "Virgo",
-          c: "Cancer",
-          d: "Sagittarius"
-        },
-        correctAnswer: "c"
+      question: "According to Sherlock Holmes, 'If you eliminate the impossible, whatever remains, however improbable, must be the...'?",
+      answers: {
+        a: "Answer",
+        b: "Truth",
+        c: "Cause",
+        d: "Source"
       },
-      {
-        question: "Five dollars is worth how many nickles?",
-        answers: {
-          a: "50",
-          b: "100",
-          c: "25",
-          d: "69"
-        },
-        correctAnswer: "b"
-      },
-      {
-        question: "What is Cynophobia the fear of?",
-        answers: {
-          a: "Birds",
-          b: "Flying",
-          c: "Germs",
-          d: "Dogs"
-        },
-        correctAnswer: "d"
-      },
-      {
-        question: "The Flag of the European Union has how many stars on it?",
-        answers: {
-          a: "10",
-          b: "14",
-          c: "16",
-          d: "12"
-        },
-        correctAnswer: "d"
-      },
-      {
-        question: "Which of these games includes the phrase 'Do not pass Go, do not collect $200';?",
-        answers: {
-          a: "Pay Day",
-          b: "Cluedo",
-          c: "Monopoly",
-          d: "Coppit"
-        },
-        correctAnswer: "c"
-      },
-      {
-        question: "Aubrey Graham is better known as",
-        answers: {
-          a: "Travis Scott",
-          b: "Drake",
-          c: "Lil Wayne",
-          d: "2 Chainz"
-        },
-        correctAnswer: "b"
-      },
-      {
-        question: "What does the S stand for in the abbreviation SIM, as in SIM card?",
-        answers: {
-          a: "Subscriber",
-          b: "Secure",
-          c: "Solid",
-          d: "Single"
-        },
-        correctAnswer: "a"
-      },
-      {
-        question: "Which American president appears on a one dollar bill?",
-        answers: {
-          a: "Thomas Jefferson",
-          b: "Abraham Lincoln",
-          c: "George Washington",
-          d: "Benjamin Franklin"
-        },
-        correctAnswer: "c"
-      },
-      {
-        question: "Which of these colours is NOT featured in the logo for Google?",
-        answers: {
-          a: "Yellow",
-          b: "Blue",
-          c: "Green",
-          d: "Pink"
-        },
-        correctAnswer: "d"
-      },
-      {
-        question: "When someone is inexperienced they are said to be what color?",
-        answers: {
-          a: "Green",
-          b: "Red",
-          c: "Blue",
-          d: "Yellow"
-        },
-        correctAnswer: "a"
-      },
-      {
-        question: "According to Sherlock Holmes, 'If you eliminate the impossible, whatever remains, however improbable, must be the...'?",
-        answers: {
-          a: "Answer",
-          b: "Truth",
-          c: "Cause",
-          d: "Source"
-        },
-        correctAnswer: "b"
-      },
+      correctAnswer: "b"
+    } 
     ];
 
     function buildQuiz() {
