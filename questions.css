@@ -33,14 +33,16 @@ h1{
 }
 button{
   font-family: 'Work Sans', sans-serif;
-	font-size: 22px;
+	font-size: 18px;
 	background-color:  rgb(51, 103, 214);
 	color: #fff;
 	border: 0px;
 	border-radius: 3px;
 	padding: 20px;
 	cursor: pointer;
-	margin-bottom: 20px;
+  margin-bottom: 20px;
+  margin-top: 1.5rem;
+  width: 200px;
 }
 button:hover{
 	background-color:  rgb(51, 103, 214);
@@ -65,6 +67,6 @@ button:hover{
 }
 .quiz-container{
   position: relative;
-  height: 200px;
+  height: 250px;
   margin-top: 40px;
 }
