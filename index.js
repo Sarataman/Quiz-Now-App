@@ -7,26 +7,128 @@ const question = document.getElementById("quiz");
         answers: {
           a: "1999",
           b: "2014",
-          c: "2017"
+          c: "2017",
+          d: "2011"
         },
         correctAnswer: "b"
       },
       {
-        question: "Andela core values are?",
+        question: "What is the world's most expensive spice by weight?",
         answers: {
-          a: "Strength",
-          b: "Smartness",
-          c: "EPIC"
+          a: "Saffro",
+          b: "Cinnamon",
+          c: "Cardamon",
+          d: "Vanilla"
+        },
+        correctAnswer: "a"
+      },
+      {
+        question: "Rolex is a company that specializes in what type of product?",
+        answers: {
+          a: "Car",
+          b: "Sport equipment",
+          c: "Watches",
+          d: "Clothing"
         },
         correctAnswer: "c"
       },
       {
-        question: "In EPIC, E stands for",
+        question: "Which language is NOT Indo-European?",
         answers: {
-          a: "Energy",
-          b: "Eager to learn",
-          c: "Exciting",
-          d: "Excellence"
+          a: "Russian",
+          b: "Hungarian",
+          c: "Greek",
+          d: "Latvian",
+        },
+        correctAnswer: "b"
+      },
+      {
+        question: "In 2013 how much money was lost by Nigerian scams?",
+        answers: {
+          a: "$95 Million",
+          b: "$956 Million",
+          c: "$2.7 Billion",
+          d: "$12.7 Billion"
+        },
+        correctAnswer: "d"
+      },
+      {
+        question: "When did the website 'Facebook' launch?",
+        answers: {
+          a: "2005",
+          b: "2004",
+          c: "2003",
+          d: "2006"
+        },
+        correctAnswer: "b"
+      },
+      {
+        question: "After how many years would you celebrate your crystal anniversary?",
+        answers: {
+          a: "20",
+          b: "10",
+          c: "25",
+          d: "15"
+        },
+        correctAnswer: "d"
+      },
+      {
+        question: "What is the unit of currency in Laos?",
+        answers: {
+          a: "Kip",
+          b: "Ruble",
+          c: "Konra",
+          d: "Dollar"
+        },
+        correctAnswer: "a"
+      },
+      {
+        question: "How would one say goodbye in Spanish?",
+        answers: {
+          a: "Adios",
+          b: "Hola",
+          c: "Au Revoir",
+          d: "Salir"
+        },
+        correctAnswer: "a"
+      },
+      {
+        question: "Which sign of the zodiac is represented by the Crab?",
+        answers: {
+          a: "Libra",
+          b: "Virgo",
+          c: "Cancer",
+          d: "Sagittarius"
+        },
+        correctAnswer: "c"
+      },
+      {
+        question: "Five dollars is worth how many nickles?",
+        answers: {
+          a: "50",
+          b: "100",
+          c: "25",
+          d: "69"
+        },
+        correctAnswer: "b"
+      },
+      {
+        question: "What is Cynophobia the fear of?",
+        answers: {
+          a: "Birds",
+          b: "Flying",
+          c: "Germs",
+          d: "Dogs"
+        },
+        correctAnswer: "d"
+      },
+      {
+        question: "The Flag of the European Union has how many stars on it?",
+        answers: {
+          a: "10",
+          b: "14",
+          c: "16",
+          d: "12"
         },
         correctAnswer: "d"
       }
@@ -35,7 +137,7 @@ const question = document.getElementById("quiz");
     let questionCounter = 0;
     let availableQuesions = [];
     let currentQuestion = {};
-    const MAX_QUESTIONS = 3;
+    const MAX_QUESTIONS = 10;
 
     startGame = () => {
       questionCounter = 0;      

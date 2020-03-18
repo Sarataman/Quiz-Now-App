@@ -1,1 +1,0 @@
-# sarataman.github.io

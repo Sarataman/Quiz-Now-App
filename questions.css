@@ -9,12 +9,14 @@ body{
   background-color: #f8f6f0;
 }
 h1{
-  font-weight: 300;
+  font-weight: 500;
   margin: 0px;
   padding: 10px;
   font-size: 20px;
-  background-color: #444;
+  background-color:  rgb(51, 103, 214);
   color: #fff;
+  margin-bottom: 10rem;
+  opacity: 0.8;
 }
 .question{
   font-size: 30px;
