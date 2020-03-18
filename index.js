@@ -131,41 +131,115 @@ const question = document.getElementById("quiz");
           d: "12"
         },
         correctAnswer: "d"
-      }
+      },
+      {
+        question: "Which of these games includes the phrase 'Do not pass Go, do not collect $200';?",
+        answers: {
+          a: "Pay Day",
+          b: "Cluedo",
+          c: "Monopoly",
+          d: "Coppit"
+        },
+        correctAnswer: "c"
+      },
+      {
+        question: "Aubrey Graham is better known as",
+        answers: {
+          a: "Travis Scott",
+          b: "Drake",
+          c: "Lil Wayne",
+          d: "2 Chainz"
+        },
+        correctAnswer: "b"
+      },
+      {
+        question: "What does the S stand for in the abbreviation SIM, as in SIM card?",
+        answers: {
+          a: "Subscriber",
+          b: "Secure",
+          c: "Solid",
+          d: "Single"
+        },
+        correctAnswer: "a"
+      },
+      {
+        question: "Which American president appears on a one dollar bill?",
+        answers: {
+          a: "Thomas Jefferson",
+          b: "Abraham Lincoln",
+          c: "George Washington",
+          d: "Benjamin Franklin"
+        },
+        correctAnswer: "c"
+      },
+      {
+        question: "Which of these colours is NOT featured in the logo for Google?",
+        answers: {
+          a: "Yellow",
+          b: "Blue",
+          c: "Green",
+          d: "Pink"
+        },
+        correctAnswer: "d"
+      },
+      {
+        question: "When someone is inexperienced they are said to be what color?",
+        answers: {
+          a: "Green",
+          b: "Red",
+          c: "Blue",
+          d: "Yellow"
+        },
+        correctAnswer: "a"
+      },
+      {
+        question: "According to Sherlock Holmes, 'If you eliminate the impossible, whatever remains, however improbable, must be the...'?",
+        answers: {
+          a: "Answer",
+          b: "Truth",
+          c: "Cause",
+          d: "Source"
+        },
+        correctAnswer: "b"
+      },
     ];
-  
-    let questionCounter = 0;
-    let availableQuesions = [];
-    let currentQuestion = {};
-    const MAX_QUESTIONS = 10;
-
-    startGame = () => {
-      questionCounter = 0;      
-      availableQuesions = [...questions];
-      console.log(availableQuesions);
-      getNewQuestion();
-    };
-
-    //method to randomly select questions
-    getNewQuestion = () => {
-      const questionIndex = Math.floor(Math.random() * availableQuesions.length);
-      currentQuestion = availableQuesions[questionIndex];
-      question.innerText = currentQuestion.question;    
-      availableQuesions.splice(questionIndex, 1);
-    }
 
     function buildQuiz() {
-      // we'll need a place to store the HTML output
+
+      let questionCounter = 0;
+      const maxQuestions = 10;
+
+      startGame = () => {
+          questionCounter = 0;
+          score = 0;
+          availableQuestions = [...myQuestions];
+         
+          getNewQuestion();
+      };
+     
+      getNewQuestion = () => {
+      
+          if(availableQuestions.length === 0 || questionCounter >= maxQuestions){
+              return window.location.assign("/end.html");
+          }
+      
+          questionCounter++;
+          progressText.innerHTML = `Question ${questionCounter}/${maxQuestions}`;
+      
+      
+          const questionIndex = Math.floor(Math.random()*availableQuestions.length);
+          currentQuestion = availableQuestions[questionIndex];
+          question.innerText = currentQuestion.question;
+      
+          availableQuestions.splice(questionIndex, 1);
+      };
+
       const output = [];
-  
-      // for each question...
+
       myQuestions.forEach((currentQuestion, questionNumber) => {
-        // we'll want to store the list of answer choices
         const answers = [];
   
-        // and for each available answer...
         for (letter in currentQuestion.answers) {
-          // ...add an HTML radio button
           answers.push(
             `<label>
                <input type="radio" name="question${questionNumber}" value="${letter}">
@@ -175,7 +249,6 @@ const question = document.getElementById("quiz");
           );
         }
   
-        // add this question and its answers to the output
         output.push(
           `<div class="slide">
              <div class="question"> ${currentQuestion.question} </div>
@@ -184,39 +257,33 @@ const question = document.getElementById("quiz");
         );
       });
   
-      // finally combine our output list into one string of HTML and put it on the page
+      //combine output list into one string of HTML and put it on the page
       quizContainer.innerHTML = output.join("");
+
+      
     }
   
+
     function showResults() {
-      // gather answer containers from our quiz
       const answerContainers = quizContainer.querySelectorAll(".answers");
       let score = 0;
   
-      // keep track of user's answers
       let numCorrect = 0;
   
-      // for each question...
       myQuestions.forEach((currentQuestion, questionNumber) => {
-        // find selected answer
+    
         const answerContainer = answerContainers[questionNumber];
         const selector = `input[name=question${questionNumber}]:checked`;
         const userAnswer = (answerContainer.querySelector(selector) || {}).value;
   
-        // if answer is correct
         if (userAnswer === currentQuestion.correctAnswer) {
-          // add to the number of correct answers
           numCorrect++;
-  
-          // color the answers green
           answerContainers[questionNumber].style.color = "lightgreen";
-        } else {
-          // if answer is wrong or blank
-          // color the answers red
+        } 
+        else {
           answerContainers[questionNumber].style.color = "red";
         }
       });
-      
   
       // show number of correct answers out of total
       resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
@@ -233,14 +300,16 @@ const question = document.getElementById("quiz");
       
       if (currentSlide === 0) {
         previousButton.style.display = "none";
-      } else {
+      } 
+      else {
         previousButton.style.display = "inline-block";
       }
       
       if (currentSlide === slides.length - 1) {
         nextButton.style.display = "none";
         submitButton.style.display = "inline-block";
-      } else {
+      } 
+      else {
         nextButton.style.display = "inline-block";
         submitButton.style.display = "none";
       }
@@ -258,7 +327,6 @@ const question = document.getElementById("quiz");
     const resultsContainer = document.getElementById("results");
     const submitButton = document.getElementById("submit");
   
-    // display quiz right away
     buildQuiz();
   
     const previousButton = document.getElementById("previous");
@@ -268,7 +336,6 @@ const question = document.getElementById("quiz");
   
     showSlide(0);
   
-    // on submit, show results
     submitButton.addEventListener("click", showResults);
     previousButton.addEventListener("click", showPreviousSlide);
     nextButton.addEventListener("click", showNextSlide);
