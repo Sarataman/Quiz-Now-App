@@ -12,7 +12,7 @@ h1{
   font-weight: 500;
   margin: 0px;
   padding: 10px;
-  font-size: 20px;
+  font-size: 15px;
   background-color:  rgb(51, 103, 214);
   color: #fff;
   margin-bottom: 6rem;
@@ -38,10 +38,10 @@ button{
 	color: #fff;
 	border: 0px;
 	border-radius: 3px;
-	padding: 20px;
+	padding: 15px;
 	cursor: pointer;
-  margin-bottom: 20px;
-  margin-top: 0.8rem;
+  margin-bottom: 1.5rem;
+  margin-top: 3.9rem;
   width: 200px;
 }
 button:hover{
@@ -65,4 +65,8 @@ button:hover{
   position: relative;
   height: 250px;
   margin: 0 auto;
+}
+
+#submit {
+  margin-top: 0.8rem;
 }
